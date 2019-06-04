@@ -39,7 +39,7 @@ while True:
 
 	# if the frame dimensions are empty, grab them
     if W is None or H is None:
-        (H, W) = frame.shape[:2]
+        (H, W) = image.shape[:2]
     
     
     
@@ -47,8 +47,8 @@ while True:
     image = img_preprocess(image)
     image = np.array([image])
     steering_angle = float(model.predict(image))
-    throttle = 1.0 - speed/speed_limit
-    	
+    #throttle = 1.0 - speed/speed_limit
+    k = cv2.waitKey ( 5 )		
 # read the next frame from the file
     if k==27:
         break
